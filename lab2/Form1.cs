@@ -8,14 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Configuration
+using System.Configuration;
+
 namespace crudUi
+
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+
             var con = Configuration.getInstance().getConnection();
             SqlCommand cmd = new SqlCommand("Select * from Student", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
