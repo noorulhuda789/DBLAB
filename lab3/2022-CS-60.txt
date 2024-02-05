@@ -4,7 +4,7 @@ SELECT * FROM orders WHERE RequiredDate<ShippedDate
 
 
 Q2
-SELECT distinct(Country) FROM Employees
+SELECT Distinct(Country) FROM Employees
 ***
 
 
@@ -19,7 +19,7 @@ SELECT ProductName FROM Products WHERE Discontinued = 'True'
 
 
 Q5
-SELECT OrderID FROM [Order Details] WHERE Discount =0
+SELECT Distinct OrderID FROM [Order Details] WHERE Discount =0
 ***
 
 
@@ -39,12 +39,12 @@ SELECT CompanyName FROM Suppliers WHERE HomePage is Not Null
 
 
 Q9
-SELECT ShipCountry FROM Orders WHERE Year(ShippedDate) = 1997
+SELECT Distinct ShipCountry FROM Orders WHERE Year(OrderDate) = 1997
 ***
 
 
 Q10
-SELECT  CustomerID FROM Orders WHERE ShipRegion is Null
+SELECT  CustomerID FROM Orders WHERE ShipDate is Null
 ***
 
 
@@ -64,7 +64,7 @@ SELECT ProductName FROM Products WHERE Discontinued = 'False'
 
 
 Q14
-SELECT OrderID FROM [Order Details] WHERE Discount <= 0.1
+SELECT Distinct OrderID FROM [Order Details] WHERE Discount <= 0.1
 ***
 
 

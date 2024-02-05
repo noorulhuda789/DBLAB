@@ -1,16 +1,19 @@
 
-Select *
-FRom orders
+Select OrderID,CustomerID,EmployeeID,OrderDate,RequiredDate,
+ShippedDate,ShipVia,Freight,ShipName,ShipAddress,ShipCity,
+ShipRegion,ShipPostalCode,ShipCountry
+FRom Orders
 where ShippedDate > RequiredDate;
 
 
 Select distinct(Country)
 from Employees;
 
-Select Count(distinct(Country))
-from Employees;
 
-Select *
+
+Select  EmployeeID,LastName,FirstName,TitleOfCourtesy,
+HireDate,Address,City,Region,PostalCode,Country,HomePhone,
+Extension, Photo,Notes,ReportsTo,PhotoPath
 from Employees
 Where ReportsTo is Null;
 
@@ -18,7 +21,7 @@ Select ProductName
 from Products
 Where Discontinued = 'True';
 
-SELECT OrderID
+SELECT Distinct OrderID
 FROM [Order Details]
 WHERE Discount =0;
 
@@ -34,19 +37,19 @@ Select CompanyName
 From Suppliers
 Where HomePage is Not Null;
 
-SELECT ShipCountry
+SELECT Distinct ShipCountry
 FROM Orders
-WHERE Year(ShippedDate) = 1997;
+WHERE Year(OrderDate) = 1997;
 
 
 select  CustomerID
 From Orders
-Where ShipRegion is Null;
+Where  ShippedDate is NULL;
 
 Select SupplierID,CompanyName,City
 From Suppliers;
 
-Select *
+Select EmployeeID,LastName,FirstName,TitleOfCourtesy,HireDate,Address,City,Region,PostalCode,Country,HomePhone,Extension,Photo,Notes,ReportsTo,PhotoPath
 From Employees
 Where City='London';
 
@@ -55,7 +58,7 @@ Select ProductName
 from Products
 Where Discontinued = 'False';
 
-SELECT OrderID
+SELECT Distinct OrderID
 FROM [Order Details]
 WHERE Discount <= 0.1;
 
